@@ -1,4 +1,5 @@
 import { useState, Fragment } from "react";
+import RegisterForm from "../components/RegisterForm";
 
 const Register = () => {
     const [name, setName,] = useState("");
@@ -11,43 +12,6 @@ const Register = () => {
         console.table({ name, email, password })
     }
 
-    const registerForm = () => (
-        <form onSubmit={handleSubmit} className="mt-3">
-
-            <div className="form-group mb-3">
-                <label className="form-label">Type your name</label>
-                <input
-                    type="text"
-                    className="form-control"
-                    placeholder="Name"
-                    value={name}
-                    onChange={(e) => setName(e.target.value)} />
-            </div>
-
-            <div className="form-group mb-3">
-                <label className="form-label">Type your email</label>
-                <input
-                    type="email"
-                    className="form-control"
-                    placeholder="email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)} />
-            </div>
-
-            <div className="form-group mb-3">
-                <label className="form-label">Type your password</label>
-                <input
-                    type="password"
-                    className="form-control"
-                    placeholder="Password"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)} />
-            </div>
-
-            <button className="btn btn-primary">Submit</button>
-
-        </form>
-    )
 
     return (
         <Fragment>
@@ -58,7 +22,15 @@ const Register = () => {
             <div className="container">
                 <div className="row">
                     <div className="col-md-6 offset-md-3">
-                        {registerForm()}
+                        <RegisterForm  
+                        name={name} 
+                        setName={setName} 
+                        email={email} 
+                        setEmail={setEmail}
+                        password={password}
+                        setPassword={setPassword}
+                        handleSubmit={handleSubmit} 
+                        />
                     </div>
                 </div>
             </div>

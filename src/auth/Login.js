@@ -29,7 +29,7 @@ const Longin = ({ history }) => {
                    type: "LOGGED_IN_USER",
                    payload: res.data,
                }); 
-            //   history.push("/");// using history prop from react router to redirect to Home page
+             history.push("/");// using history prop from react router to redirect to Home page
             }
         } catch (err) {
             console.log(err)
